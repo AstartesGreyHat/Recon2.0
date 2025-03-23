@@ -1,11 +1,11 @@
 import os
-import configparser  # Para leer el archivo .conf
+import configparser  
 from flask import Flask, Response, jsonify
 from strawberry.flask.views import GraphQLView
 from Recon import generate_frames, processor
 from graphql_schema import schema
 from base64 import b64encode
-from waitress import serve  # Servidor WSGI para Windows
+from waitress import serve  
 
 # -----------------------------
 # Cargar Configuración desde server.conf
@@ -49,7 +49,7 @@ if __name__ != "__main__":
 # -----------------------------
 if __name__ == "__main__":
     try:
-        print(f"🚀 Iniciando servidor en {HOST}:{PORT} con {WORKERS} workers...")
+        print(f"Iniciando servidor en {HOST}:{PORT} con {WORKERS} workers...")
 
         if os.name == "nt":  # Windows → Usar Waitress
             serve(app, host=HOST, port=PORT)
